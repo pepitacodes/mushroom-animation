@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+  background: linear-gradient(180deg, rgba(74,214,215,0.9585084033613446) 31%, rgba(146,215,216,1) 45%, rgba(145,222,170,1) 65%, rgba(187,208,98,1) 95%);
+  height: fit-content;
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.floor {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  border-bottom: 500px solid green;
+}
+.mushroom {
+    margin: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    width: max-content;
+    position: relative;
+    filter: drop-shadow( 0 0 10px);
+    animation: hop 10s cubic-bezier(0,-0.01,.96,.93) infinite;
+}
+.head {
+    width: 255px;
+    height: 230px;
+    background-color: #09d066;
+    border-radius: 50%;
+    box-shadow: 0 0 4px;
+    overflow: hidden;
+    position: relative;
+    border-bottom-right-radius: 70px;
+    border-bottom-left-radius: 70px;
+    animation: color-change 10s cubic-bezier(.13,.64,.68,.19) infinite;
+}
+.head::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    color: #FFF;
+    width: 110px;
+    height: 110px;
+    background-color: #FFF;
+    box-shadow: 140px 0, -140px 0;  
+  
+}
+.face {
+    position: absolute;
+    background-color: #ffd187;
+    width: 155px;
+    height: 90px;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 50% 50% / 26% 26% 26% 26%;
+    box-shadow: -5px -5px inset #efba68;
+}
+.eye {
+    background-color: #000;
+    border-radius: 50%;
+    width: 14px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    box-shadow: 61px 0;
+}
+.eye::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: -2px;
+    width: 10px;
+    height: 15px;
+    background-color: #FFF;
+    border-radius: 50%; 
+    box-shadow: 61px 0 #FFF;
+}
+
+@keyframes hop {
+  0% { left: 0;} 
+  25% { left: 50%;}
+  50% {left: calc(100% - 255px);}
+  75% {left: 50%;}
+  90% {left: 25%;}
+  95% {left: 10%;}
+  100% {left: 0;}
+}
+/*
+@keyframes color-change {
+    0% { background-color: red;}
+  25% {background-color: orange;}
+  50% {background-color: violet;}
+  75% {background-color: blue;} 
+  100%{background-color: green }
+}*/
+
+@keyframes color-change {
+  0% { background-color: blue;}
+25% {background-color: green;}
+50% {background-color: orange;}
+75% {background-color: red;} 
+100%{background-color: darkviolet; }
+}
